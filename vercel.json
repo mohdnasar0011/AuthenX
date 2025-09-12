@@ -1,12 +1,12 @@
 {
   "env": {
-    "GEMINI_API_KEY": "@gemini_api_key",
-    "INSTITUTION_API_KEY": "@institution_api_key"
+    "GEMINI_API_KEY": "GEMINI_API_KEY",
+    "INSTITUTION_API_KEY": "INSTITUTION_API_KEY"
   },
   "build": {
     "env": {
-      "GEMINI_API_KEY": "@gemini_api_key",
-      "INSTITUTION_API_KEY": "@institution_api_key"
+      "GEMINI_API_KEY": "GEMINI_API_KEY",
+      "INSTITUTION_API_KEY": "INSTITUTION_API_KEY"
     }
   }
 }
