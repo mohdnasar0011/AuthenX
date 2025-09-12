@@ -1,0 +1,297 @@
+[
+  {
+    "Certificate": {
+      "language": "99",
+      "name": "Class X Marksheet",
+      "type": "SSCER",
+      "number": "23226443",
+      "issuedAt": "",
+      "issueDate": "",
+      "validFromDate": "",
+      "status": "A",
+      "IssuedBy": {
+        "Organization": {
+          "name": "Central Board of Secondary Education",
+          "code": "",
+          "tin": "",
+          "uid": "",
+          "type": "CG",
+          "Address": {
+            "type": "",
+            "line1": "",
+            "line2": "",
+            "house": "",
+            "landmark": "",
+            "locality": "",
+            "vtc": "",
+            "district": "",
+            "pin": "",
+            "state": "",
+            "country": "IN"
+          }
+        }
+      },
+      "IssuedTo": {
+        "Person": {
+          "uid": "",
+          "title": "",
+          "name": "MOHD NASAR",
+          "dob": "29-11-2005",
+          "swd": "AHMAD NADEEM",
+          "swdIndicator": "",
+          "motherName": "SHABANA IDREESI",
+          "gender": "Male",
+          "maritalStatus": "",
+          "religion": "",
+          "phone": "",
+          "email": "",
+          "Address": {
+            "type": "permanent",
+            "line1": "",
+            "line2": "",
+            "house": "",
+            "landmark": "",
+            "locality": "",
+            "vtc": "",
+            "district": "",
+            "pin": "",
+            "state": "",
+            "country": "IN"
+          },
+          "Photo": {
+            "format": "JPEG",
+            "#text": "data:image/jpeg;base64,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"
+          }
+        }
+      },
+      "CertificateData": {
+        "School": {
+          "name": "ST CLARE'S CONVENT SCHOOL PO KAKORI LUCKNOW UP",
+          "code": "70938",
+          "regionName": "",
+          "regionCode": "R"
+        },
+        "Examination": {
+          "name": "",
+          "centerCode": "847290",
+          "admitCardId": "MS447072",
+          "month": "JULY",
+          "year": "2022"
+        },
+        "Performance": {
+          "result": "PASS",
+          "marksTotal": "442",
+          "marksMax": "",
+          "percentage": "",
+          "cgpa": "",
+          "cgpaMax": "",
+          "resultDate": "22-07-2022",
+          "updateDate": "22-07-2022",
+          "Subjects": {
+            "Subject": [
+              {
+                "name": "ENGLISH LNG & LIT.",
+                "code": "184",
+                "marksTheory": "073",
+                "marksMaxTheory": "",
+                "marksPractical": "020",
+                "marksMaxPractical": "",
+                "marksTotal": "093",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": "A1"
+              },
+              {
+                "name": "HINDI COURSE-B",
+                "code": "085",
+                "marksTheory": "067",
+                "marksMaxTheory": "",
+                "marksPractical": "020",
+                "marksMaxPractical": "",
+                "marksTotal": "087",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": "B1"
+              },
+              {
+                "name": "MATHEMATICS STANDARD",
+                "code": "041",
+                "marksTheory": "069",
+                "marksMaxTheory": "",
+                "marksPractical": "020",
+                "marksMaxPractical": "",
+                "marksTotal": "089",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": "A2"
+              },
+              {
+                "name": "SCIENCE",
+                "code": "086",
+                "marksTheory": "066",
+                "marksMaxTheory": "",
+                "marksPractical": "020",
+                "marksMaxPractical": "",
+                "marksTotal": "086",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": "A2"
+              },
+              {
+                "name": "SOCIAL SCIENCE",
+                "code": "087",
+                "marksTheory": "067",
+                "marksMaxTheory": "",
+                "marksPractical": "020",
+                "marksMaxPractical": "",
+                "marksTotal": "087",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": "A2"
+              },
+              {
+                "name": "INFORMATION TECHNOLOGY",
+                "code": "402",
+                "marksTheory": "043",
+                "marksMaxTheory": "",
+                "marksPractical": "050",
+                "marksMaxPractical": "",
+                "marksTotal": "093",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": "A1"
+              },
+              {
+                "name": "",
+                "code": "",
+                "marksTheory": "",
+                "marksMaxTheory": "",
+                "marksPractical": "",
+                "marksMaxPractical": "",
+                "marksTotal": "",
+                "marksMax": "",
+                "gp": "",
+                "gpMax": "",
+                "grade": ""
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "University": "KHWAJA MOINUDDIN CHISHTI LANGUAGE UNIVERSITY, LUCKNOW",
+    "Session": "2024-25",
+    "Enroll Number": "B-0948",
+    "Student Name": "Mohd Nasar",
+    "Father Name": "Ahmad Nadeem",
+    "Programme": "B.Tech (COMPUTER SCIENCE AND ENGINEERING)",
+    "Semester": 3,
+    "Date of Birth": "29-Nov-2005",
+    "Blood Group": "B+",
+    "Permanent Address": "Plot-9, khasra no-151, fatima colony, mahipatamau, dubagga, Lucknow",
+    "Mobile No": "7376623203",
+    "Emergency Contact Mobile": "7376623203",
+    "Issuing Authority": "Proctor"
+  },
+  {
+    "Board": "Springfield Education Board",
+    "Class": "12",
+    "Student Name": "Mohd Nasir Khan",
+    "Roll Number": "1069321",
+    "Date of Birth": "15-06-2007",
+    "Father's Name": "Abdul Rehman Khan",
+    "Mother's Name": "Saira Banu",
+    "School": "Springfield Public School",
+    "Marks Obtained": [
+      {
+        "Subject": "English",
+        "Max Marks": 100,
+        "Marks Obtained": 90
+      },
+      {
+        "Subject": "Physics",
+        "Max Marks": 100,
+        "Marks Obtained": 70
+      },
+      {
+        "Subject": "Chemistry",
+        "Max Marks": 100,
+        "Marks Obtained": 82
+      },
+      {
+        "Subject": "Mathematics",
+        "Max Marks": 100,
+        "Marks Obtained": 94
+      },
+      {
+        "Subject": "Biology",
+        "Max Marks": 100,
+        "Marks Obtained": 86
+      }
+    ],
+    "Total Marks": 422,
+    "Certificate ID": "12M2025XYZ568"
+  },
+  {
+    "University": "KHWAJA MOINUDDIN CHISHTI LANGUAGE UNIVERSITY, LUCKNOW",
+    "Session": "2024-25",
+    "Enroll Number": "B-0948",
+    "Student Name": "Mohd Nasar",
+    "Father Name": "Ahmad Nadeem",
+    "Programme": "B.Tech (COMPUTER SCIENCE AND ENGINEERING)",
+    "Semester": 3,
+    "Date of Birth": "29-Nov-2005",
+    "Blood Group": "B+",
+    "Permanent Address": "Plot-9, khasra no-151, fatima colony, mahipatamau, dubagga, Lucknow",
+    "Mobile No": "7376623203",
+    "Emergency Contact Mobile": "7376623203",
+    "Issuing Authority": "Proctor"
+  },
+  {
+    "Board": "Springfield Education Board",
+    "Class": "12",
+    "Student Name": "Mohd Nasir Khan",
+    "Roll Number": "1069321",
+    "Date of Birth": "15-06-2007",
+    "Father's Name": "Abdul Rehman Khan",
+    "Mother's Name": "Saira Banu",
+    "School": "Springfield Public School",
+    "Marks Obtained": [
+      {
+        "Subject": "English",
+        "Max Marks": 100,
+        "Marks Obtained": 90
+      },
+      {
+        "Subject": "Physics",
+        "Max Marks": 100,
+        "Marks Obtained": 70
+      },
+      {
+        "Subject": "Chemistry",
+        "Max Marks": 100,
+        "Marks Obtained": 82
+      },
+      {
+        "Subject": "Mathematics",
+        "Max Marks": 100,
+        "Marks Obtained": 94
+      },
+      {
+        "Subject": "Biology",
+        "Max Marks": 100,
+        "Marks Obtained": 86
+      }
+    ],
+    "Total Marks": 422,
+    "Certificate ID": "12M2025XYZ568"
+  }
+]

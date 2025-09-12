@@ -1,0 +1,15 @@
+Copyright (c) 2024 AuthenX
+
+All Rights Reserved.
+
+Permission to view the source code of this project is granted for educational and observational purposes only. No part of this project, including its code, design, or any related assets, may be reproduced, distributed, or transmitted in any form or by any means, including photocopying, recording, or other electronic or mechanical methods, without the prior written permission of the copyright holder.
+
+This includes, but is not limited to, the following actions which are expressly forbidden:
+- Forking the repository for public or private use.
+- Copying, cloning, or downloading the source code to create a derivative work.
+- Using any portion of the code in another project, whether open source or commercial.
+- Redistributing the code or any part of it.
+
+Any unauthorized use of this software is a violation of copyright law and will be prosecuted to the fullest extent of the law.
+
+For inquiries regarding permissions, please contact the copyright holder.
