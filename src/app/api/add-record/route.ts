@@ -3,7 +3,8 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { generateShellId } from '@/ai/flows/generate-shell-id';
 import { kv } from '@vercel/kv';
-import blockchainData from '@/data/blockchain.json';
+import path from 'path';
+import fs from 'fs/promises';
 
 // Hardcoded API key for demonstration purposes
 // In a real application, this should be stored securely in environment variables
@@ -17,7 +18,10 @@ async function getRecords(key: string): Promise<any[]> {
   // If KV is empty, seed it from the local JSON file
   if (!records) {
     if (key === BLOCKCHAIN_KEY) {
-      records = blockchainData;
+      // Use fs.readFile to get data from local json
+      const filePath = path.join(process.cwd(), 'data', 'blockchain.json');
+      const fileContents = await fs.readFile(filePath, 'utf-8');
+      records = JSON.parse(fileContents);
     } else {
       records = [];
     }
