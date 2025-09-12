@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { generateShellId } from '@/ai/flows/generate-shell-id';
 import { kv } from '@vercel/kv';
-import blockchainData from '../../../../data/blockchain.json';
+import blockchainData from '@/data/blockchain.json';
 
 // Hardcoded API key for demonstration purposes
 // In a real application, this should be stored securely in environment variables
