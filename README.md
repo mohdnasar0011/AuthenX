@@ -50,7 +50,7 @@ Push the project code to a new repository on your GitHub, GitLab, or Bitbucket a
 
 Trigger a new deployment from the "Deployments" tab. Vercel will automatically build the application and deploy it. The first time the application runs, it will automatically "seed" the Vercel KV database with the initial records from `data/blockchain.json` and `data/digilocker.json`.
 
-##  instytucjonalny API
+##  Institutional API
 
 The application includes a secure API endpoint for institutions to add new certificate records directly to the blockchain ledger.
 
