@@ -6,8 +6,8 @@ import { z } from 'zod';
 import FuzzySearch from 'fuzzy-search';
 import { revalidatePath } from 'next/cache';
 import { kv } from '@vercel/kv';
-import blockchainData from '../../data/blockchain.json';
-import digilockerData from '../../data/digilocker.json';
+import blockchainData from '@/data/blockchain.json';
+import digilockerData from '@/data/digilocker.json';
 
 
 // Export generateShellId for use in other server components
