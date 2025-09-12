@@ -6,8 +6,8 @@ import { z } from 'zod';
 import FuzzySearch from 'fuzzy-search';
 import { revalidatePath } from 'next/cache';
 import { kv } from '@vercel/kv';
-import blockchainData from '../../data/blockchain.json';
-import digilockerData from '../../data/digilocker.json';
+import blockchainData from '@/data/blockchain.json';
+import digilockerData from '@/data/digilocker.json';
 
 
 // Export generateShellId for use in other server components
@@ -32,15 +32,19 @@ async function getRecords(key: string): Promise<any[]> {
   
   // If KV is empty, seed it from the local JSON file
   if (!records) {
+    let data;
     if (key === BLOCKCHAIN_KEY) {
-      records = blockchainData;
+      data = blockchainData;
     } else if (key === DIGILOCKER_KEY) {
-      records = digilockerData;
+      data = digilockerData;
+    }
+    
+    if (data) {
+        records = data;
+        await kv.set(key, records);
     } else {
         records = [];
     }
-    // Save the initial data to KV for future requests
-    await kv.set(key, records);
   }
   
   return records;
@@ -375,3 +379,5 @@ export async function addDigilockerRecords(
         return { success: false, message: `Failed to process file: ${message}` };
     }
 }
+
+    
