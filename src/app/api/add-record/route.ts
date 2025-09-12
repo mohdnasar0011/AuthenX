@@ -3,12 +3,10 @@ import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { generateShellId } from '@/ai/flows/generate-shell-id';
 import { kv } from '@vercel/kv';
-import path from 'path';
-import fs from 'fs/promises';
+import blockchainData from '@/data/blockchain.json';
 
-// Hardcoded API key for demonstration purposes
-// In a real application, this should be stored securely in environment variables
-const AUTH_API_KEY = process.env.INSTITUTION_API_KEY || 'your-secret-api-key';
+// Use the environment variable for the API key, provided by Vercel's infrastructure
+const AUTH_API_KEY = process.env.INSTITUTION_API_KEY;
 
 const BLOCKCHAIN_KEY = 'blockchain_records';
 
@@ -18,10 +16,7 @@ async function getRecords(key: string): Promise<any[]> {
   // If KV is empty, seed it from the local JSON file
   if (!records) {
     if (key === BLOCKCHAIN_KEY) {
-      // Use fs.readFile to get data from local json
-      const filePath = path.join(process.cwd(), 'data', 'blockchain.json');
-      const fileContents = await fs.readFile(filePath, 'utf-8');
-      records = JSON.parse(fileContents);
+      records = blockchainData;
     } else {
       records = [];
     }
@@ -43,7 +38,7 @@ const recordSchema = z.object({
 export async function POST(request: Request) {
   // 1. Authenticate the request
   const apiKey = request.headers.get('x-api-key');
-  if (apiKey !== AUTH_API_KEY) {
+  if (!AUTH_API_KEY || apiKey !== AUTH_API_KEY) {
     return NextResponse.json({ success: false, message: 'Unauthorized: Invalid API Key' }, { status: 401 });
   }
 
