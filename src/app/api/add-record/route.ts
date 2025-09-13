@@ -16,7 +16,7 @@ const kv = new Redis({
 
 const BLOCKCHAIN_KEY = 'blockchain_records';
 
-// Function to read records from Vercel KV, with a fallback to local JSON for seeding
+// Function to read records from Upstash, with a fallback to local JSON for seeding
 async function getRecords(key: string): Promise<any[]> {
   let records = await kv.get<any[]>(key);
   // If KV is empty, seed it from the local JSON file
