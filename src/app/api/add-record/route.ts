@@ -1,4 +1,3 @@
-
 // src/app/api/add-record/route.ts
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
@@ -51,7 +50,7 @@ export async function POST(request: Request) {
 
   try {
      if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
-      throw new Error('@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN');
+      throw new Error('Database environment variables are not configured. Please connect Upstash Redis in your Vercel project settings.');
     }
     const body = await request.json();
 
