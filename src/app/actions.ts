@@ -193,7 +193,7 @@ export async function verifyCertificate(
   
   try {
     if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
-      throw new Error('@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN');
+      throw new Error('Database environment variables are not configured. Please connect Upstash Redis in your Vercel project settings.');
     }
     const validatedData = inputSchema.safeParse(imageDataUri);
     if (!validatedData.success) {
@@ -288,7 +288,10 @@ export async function verifyCertificate(
             errorMessage = 'API quota exceeded. You have made too many requests in a short period. Please wait a minute and try again, or check your billing plan.';
         } else if (e.message.includes('503 Service Unavailable')) {
             errorMessage = 'The verification service is temporarily overloaded. Please wait a moment and try again.';
-        } else {
+        } else if (e.message.includes('API key not valid')) {
+            errorMessage = 'The Gemini API Key is invalid or missing. Please check your Vercel project environment variables.';
+        }
+        else {
             errorMessage = e.message;
         }
     }
@@ -300,7 +303,7 @@ export async function addToBlockchain(
   data: CertificateRecord
 ): Promise<{ success: boolean; message: string }> {
     if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
-      return { success: false, message: '@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN' };
+      return { success: false, message: 'Database environment variables are not configured. Please connect Upstash Redis in your Vercel project settings.' };
     }
     const recordSchema = z.object({
         name: z.string(),
@@ -361,7 +364,7 @@ export async function addDigilockerRecords(
 
     try {
         if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
-            throw new Error('@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN');
+            throw new Error('Database environment variables are not configured. Please connect Upstash Redis in your Vercel project settings.');
         }
         const fileContent = await jsonFile.text();
         const newRecords = JSON.parse(fileContent);
