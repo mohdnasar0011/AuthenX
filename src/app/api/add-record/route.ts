@@ -2,11 +2,17 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
 import { generateShellId } from '@/ai/flows/generate-shell-id';
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
 import blockchainData from '@/data/blockchain.json';
 
 // Use the environment variable for the API key, provided by Vercel's infrastructure
 const AUTH_API_KEY = process.env.INSTITUTION_API_KEY;
+
+// Initialize the Upstash Redis client
+const kv = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 const BLOCKCHAIN_KEY = 'blockchain_records';
 
@@ -43,6 +49,9 @@ export async function POST(request: Request) {
   }
 
   try {
+     if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+      throw new Error('@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN');
+    }
     const body = await request.json();
 
     // 2. Validate the incoming data
