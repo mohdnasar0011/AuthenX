@@ -5,10 +5,15 @@ import { generateShellId as genShellId } from '@/ai/flows/generate-shell-id';
 import { z } from 'zod';
 import FuzzySearch from 'fuzzy-search';
 import { revalidatePath } from 'next/cache';
-import { kv } from '@vercel/kv';
-import path from 'path';
-import fs from 'fs/promises';
+import { Redis } from '@upstash/redis';
+import blockchainData from '@/data/blockchain.json';
+import digilockerData from '@/data/digilocker.json';
 
+// Initialize the Upstash Redis client
+const kv = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+});
 
 // Export generateShellId for use in other server components
 export const generateShellId = genShellId;
@@ -34,15 +39,13 @@ async function getRecords(key: string): Promise<any[]> {
   if (!records) {
     let data;
     if (key === BLOCKCHAIN_KEY) {
-      const filePath = path.join(process.cwd(), 'data', 'blockchain.json');
-      data = await fs.readFile(filePath, 'utf-8');
+      data = blockchainData;
     } else if (key === DIGILOCKER_KEY) {
-      const filePath = path.join(process.cwd(), 'data', 'digilocker.json');
-      data = await fs.readFile(filePath, 'utf-8');
+      data = digilockerData;
     }
     
     if (data) {
-        records = JSON.parse(data);
+        records = data;
         await kv.set(key, records);
     } else {
         records = [];
@@ -189,6 +192,9 @@ export async function verifyCertificate(
   );
   
   try {
+    if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+      throw new Error('@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN');
+    }
     const validatedData = inputSchema.safeParse(imageDataUri);
     if (!validatedData.success) {
       return { error: 'Invalid file format. Please upload a valid image or PDF file.' };
@@ -293,6 +299,9 @@ export async function verifyCertificate(
 export async function addToBlockchain(
   data: CertificateRecord
 ): Promise<{ success: boolean; message: string }> {
+    if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+      return { success: false, message: '@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN' };
+    }
     const recordSchema = z.object({
         name: z.string(),
         rollNumber: z.string().nullable(),
@@ -351,6 +360,9 @@ export async function addDigilockerRecords(
     }
 
     try {
+        if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+            throw new Error('@upstash/redis: Missing required environment variables UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN');
+        }
         const fileContent = await jsonFile.text();
         const newRecords = JSON.parse(fileContent);
 
